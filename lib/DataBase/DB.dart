@@ -13,7 +13,7 @@ class DB {
         openDatabase(path, 
             version: version,
             onConfigure: onConfigure,
-            onCreate: );
+            onCreate: onCreate);
     }
 }
 
