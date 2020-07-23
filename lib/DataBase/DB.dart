@@ -1,3 +1,4 @@
+import 'package:flutter_with_sqlite/DataBase/DBTable.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
@@ -20,7 +21,7 @@ onConfigure(Database db) async {
     await db.execute("PRAGMA foreign_keys = ON");
 }
 
-onCreate(Database db, int version) {
-    
+onCreate(Database db, int version) async {
+    DBTable.TABLES.forEach((script)async => await db.execute(script));
 }
 
